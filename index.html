@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>WhatsApp link generator | Generate WhatsApp Link FREE</title>
+        <meta name="description" content="" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+        <link rel="manifest" href="manifest.json">
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+        <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="manifest" href="site.webmanifest">
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+            }
+            body {
+                background-color: #f8f9fa;
+            }
+            .navbar {
+                background-color: #ffffff;
+                box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+                border-radius: 10px;
+            }
+            .navbar-brand {
+                color: #0f9d58;
+                transition: color 0.3s ease-in-out;
+            }
+            .navbar-nav .nav-link {
+                color: black;
+                transition: color 0.3s ease-in-out;
+                border-radius: 10px;
+                padding: 5px 15px;
+            }
+            .navbar-nav .nav-link:hover {
+                color: #007f3e;
+                background-color: rgba(15, 157, 88, 0.1);
+            }
+            /* Custom styles for animation and design */
+
+            .hero {
+                background: linear-gradient(to bottom, #25d366, #ffffff);
+                color: #fff;
+                padding: 150px 0;
+            }
+            .generator-card {
+                border: none;
+                border-radius: 10px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+            .typewriter-container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: calc(100vh - 56px); /* Subtract navbar height */
+            }
+            h1 {
+                text-align: center;
+                font-size: 2.5rem;
+                margin-top: 20px;
+                animation: fadeInUp 1.5s ease-in-out;
+            }
+            @keyframes fadeInUp {
+                0% {
+                    opacity: 0;
+                    transform: translateY(20px);
+                }
+                100% {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+            .form-label {
+                border-radius: 5px;
+                padding: 5px 10px;
+                background-color: #f0f0f0;
+                font-weight: bold;
+                display: inline-block;
+            }
+            .form-row {
+                margin-bottom: 15px;
+            }
+            #result {
+                border-top: 1px solid #ccc;
+                padding-top: 15px;
+                margin-top: 20px;
+                text-align: center;
+            }
+            .qr-code {
+                display: flex;
+                justify-content: center;
+            }
+            .btn-primary {
+                background-color: #007bff;
+                border: none;
+                align-items: center;
+                margin: 0 auto;
+                display: block;
+                width: 230px;
+                padding: 10px;
+            }
+
+            .btn-primary:hover {
+                background-color: #0056b3;
+            }
+
+            #generated-link a {
+                color: #007bff;
+                text-decoration: none;
+            }
+
+            #generated-link a:hover {
+                text-decoration: underline;
+            }
+
+            /* content */
+            .content {
+                max-width: 800px;
+                margin: 0 auto;
+                padding: 20px;
+                color: rgb(0, 0, 0);
+                background-color: #ffffff;
+            }
+
+            /* footer */
+            .footer-green {
+                background-color: #4caf50;
+                color: #ffffff;
+            }
+            .social-icon {
+                color: #ffffff;
+                font-size: 24px;
+                margin: 0 10px;
+            }
+            .social-icon:hover {
+                color: #ddd;
+            }
+            /* p {
+                text-align: justify;
+            } */
+            .download-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-image: linear-gradient( 135deg, #0f9 0%, #60f 100%);
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 10px;
+    border: none;
+    display: block;
+    margin: 15px auto;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.6s ease;
+    position: relative;
+    overflow: hidden;
+    animation: pulse 2s infinite;
+  }
+
+  .download-button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+    animation: none;
+    border: none;
+  }
+
+  .download-button span {
+    position: relative;
+    z-index: 2;
+  }
+
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+      box-shadow: 0 0 0 rgba(0, 123, 255, 0.4);
+    }
+    25% {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(0, 123, 255, 0.6);
+    }
+    50% {
+      transform: scale(1);
+      box-shadow: 0 0 0 rgba(0, 123, 255, 0.4);
+    }
+    100% {
+      transform: scale(1);
+      box-shadow: 0 0 0 rgba(0, 123, 255, 0.4);
+    }
+  } 
+  .custom-toast {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            width: 200px;
+            background-color: #28a745!important;;
+            color: #fff;
+            border-radius: 5px;
+            padding: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            opacity: 0;
+            transform: translateY(-20px);
+            transition: opacity 0.3s, transform 0.3s;
+        }
+
+        .custom-toast.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .mt-3{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+.mt-2{
+    margin-left: 10px;
+    margin-bottom: 7px;
+}
+.lead{
+    text-align: justify;
+}
+        </style>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container">
+                <a class="navbar-brand" href="#">WhatsAppGenics</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about us.html">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact  us.html">Contact us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="privacy policy.html">Privacy Policy</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Terms of Service.html">Terms of Service</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Copyright Disclaimer.html">Copyright Disclaimer</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- for image -->
+        <!-- <div class="col-md-6 align-self-center">
+        <img src="/images/whatsapplink.jpeg" alt="WhatsApp Generator" class="img-fluid">
+      </div> -->
+        <div class="container">
+            <h1>Generate WhatsApp Account Links for FREE</h1>
+            <p class="lead">A WhatsApp link generator is a user-friendly online tool designed to simplify contact sharing and communication. With just a few clicks, it creates a unique clickable link that initiates a direct conversation on WhatsApp.</p>
+            <body>
+                <div class="container">
+                    <h2 class="mb-4 text-center">WhatsApp Link Generator</h2>
+                    <form>
+                        <div class="form-row">
+                            <label for="phoneNumber" class="form-label">Phone Number</label>
+                            <input type="number" class="form-control" id="phoneNumber" name="phoneNumber" placeholder="Enter phone number" required />
+                        </div>
+                        <div class="form-row">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea class="form-control" id="message" name="message" placeholder="Enter your message" required style="resize: none;"></textarea>
+                        </div>                       
+                        
+                        <div>
+                            <button type="submit" class="btn btn-primary">Generate Link & QR Code</button>
+                        </div>
+                
+                    <div id="whatsappLink" class="mt-3"></div>
+                    <div id="qrCode" class="mt-3"></div>
+                </div>
+                    </form>
+                    <button id="installButton" class="download-button"><span>Install Now</span></button>
+                    <div style="text-align: center;">
+                      <small class="text-muted">Installable only in updated chrome browsers.</small>
+                      </div> 
+                    <script>
+                        let deferredPrompt;
+                      
+                        window.addEventListener('beforeinstallprompt', (event) => {
+                          event.preventDefault();
+                          deferredPrompt = event;
+                      
+                          // Show the install button if the app isn't already installed
+                          if (!isAppInstalled()) {
+                            document.getElementById('installButton').style.display = 'block';
+                          } else {
+                            showNotification('App Already Installed');
+                          }
+                        });
+                      
+                        // Handle install button click
+                        document.getElementById('installButton').addEventListener('click', () => {
+                          if (deferredPrompt) {
+                            deferredPrompt.prompt();
+                      
+                            deferredPrompt.userChoice.then((choiceResult) => {
+                              if (choiceResult.outcome === 'accepted') {
+                                console.log('User accepted the install prompt');
+                              } else {
+                                console.log('User dismissed the install prompt');
+                              }
+                      
+                              // Reset the deferred prompt
+                              deferredPrompt = null;
+                            });
+                          }
+                        });
+                      
+                        // Check if the app is already installed
+                        function isAppInstalled() {
+                          if (window.matchMedia('(display-mode: standalone)').matches || navigator.standalone) {
+                            return true; // The app is already installed
+                          }
+                      
+                          // Check if the app is installed using older methods
+                          if (window.matchMedia('(display-mode: fullscreen)').matches) {
+                            return true; // The app is already installed
+                          }
+                      
+                          return false; // The app is not installed
+                        }
+                      
+                        // Show notification to the user
+                        function showNotification(message) {
+                          // Replace this with your actual notification implementation
+                          alert(message);
+                        }
+                      </script>
+                              </div>
+                          </div>
+                    <section class="bg-light py-5">
+                        <div class="container text-center">
+                            <h2>How WhatsApp Link Generator Works</h2>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <img src="images/number-one.png" alt="Step 1" class="img-fluid mb-3" width="110" />
+                                    <h3>Step Number 1</h3>
+                                    <p>Enter the recipient's phone number and message.</p>
+                                </div>
+                                <div class="col-md-4">
+                                    <img src="images/number-2.png" alt="Step 2" class="img-fluid mb-3" width="110px" />
+                                    <h3>Step Number 2</h3>
+                                    <p>Click on <strong> 'Generate Link'</strong> to Generate Your Account Link</p>
+                                </div>
+                                <div class="col-md-4">
+                                    <img src="images/number-3.png" alt="Step 3" class="img-fluid mb-3" width="110px" />
+                                    <h3>Step Number 3</h3>
+                                    <p>Copy and Share Your Direct WhatsApp Conversation Link.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container">
+                            <!-- information -->
+                            <h2>1. Simplify Communication with a WhatsApp Link Generator</h2>
+                            <p class="lead">In the rapidly evolving landscape of digital communication, instant messaging applications have taken center stage. WhatsApp, with its user-friendly interface and widespread adoption, has become a cornerstone of how we connect with friends, family, and colleagues. To further enhance this experience, the emergence of WhatsApp link generators has revolutionized the way we share contact information. In this article, we'll delve into the world of WhatsApp link generators, exploring their functionalities, benefits, and the strategies to ensure AdSense approval for content related to these tools.</p>
+                            
+                            <h2>2. Understanding WhatsApp Link Generators</h2>
+                            <p class="lead">At its core, a WhatsApp link generator is a web-based tool designed to simplify the process of initiating conversations on the WhatsApp platform. Traditionally, exchanging contact details involved sharing phone numbers, which could be both cumbersome and potentially intrusive. However, with the advent of WhatsApp link generators, individuals can generate a unique URL that, when clicked, initiates a conversation directly on WhatsApp. This eliminates the need to disclose personal phone numbers while facilitating seamless communication.</p>
+                            
+                            <h2>3. Advantages of Using WhatsApp Link Generators</h2>
+                            <p><strong>1. Efficiency and Convenience</strong>: WhatsApp link generators eliminate the hassle of manually sharing phone numbers. With a few clicks, users can create a custom link that serves as a virtual contact card.</p>
+                            <p><strong>2. Enhanced Privacy</strong>: By sharing a generated link instead of a phone number, users can protect their privacy and control who can initiate conversations.</p>
+                            <p><strong>3. Seamless Networking</strong>: For professionals and businesses, WhatsApp link generators offer a streamlined method for sharing contact information during networking events or business interactions.</p>
+                            <p><strong>4. Global Accessibility</strong>: With WhatsApp's global user base, these generators transcend geographical boundaries, allowing connections with individuals from different countries.</p>
+                            
+                            <h2>4. Functionality and Features</h2>
+                            <p class="lead">Modern WhatsApp link generators offer a range of features that enhance user experience and customization:</p>
+                            <ul>
+                              <li><strong>Pre-Filled Messages</strong>: Users can personalize the initial message that appears when someone clicks the link, facilitating smoother communication.</li>
+                              <li><strong>QR Code Integration</strong>: Many generators provide the option to generate QR codes alongside the link, making it easier for users to scan and connect.</li>
+                              <li><strong>Call-to-Action Buttons</strong>: Some tools allow the addition of call-to-action buttons within the generated link, enabling users to take specific actions such as sending a message or initiating a call.</li>
+                              <li><strong>Link Customization</strong>: Users can often customize the appearance of the link to align with their personal branding or website aesthetics.</li>
+                            </ul>
+                            <!-- content -->
+                        </div>
+                        <hr />
+                        <!-- footer -->
+
+                        <footer>
+                            <div class="container">
+                                <h2>Connect with WhatsAppgenics</h2>
+                                <ul class="list-inline social-icons mb-0">
+                                    <li class="list-inline-item">
+                                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a href="#"><i class="fab fa-twitter"></i></a>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a href="#"><i class="fab fa-instagram"></i></a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="container text-center">
+                                <p>&copy; 2023 <a href=""> WhatsAppgenics</a>. All rights reserved.</p>
+                            </div>
+
+                            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+                            <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+                            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+                            <!-- Link to Font Awesome for icons -->
+                            <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+                            <script>
+                                document.querySelector("form").addEventListener("submit", function (e) {
+                                    e.preventDefault();
+                        
+                                    const phoneNumber = document.getElementById("phoneNumber").value;
+                                    const message = encodeURIComponent(document.getElementById("message").value);
+                        
+                                    const link = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${message}`;
+                                    const qrCodeImg = `<img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(link)}" alt="QR Code">`;
+                        
+                                    const whatsappLinkElement = document.getElementById("whatsappLink");
+                                    whatsappLinkElement.innerHTML = `
+                                        <a href="${link}" target="_blank">${link}</a>
+                                        <button class="btn btn-sm btn-secondary mt-2" id="copyButton">Copy Link</button>
+                                    `;
+                        
+                                    const qrCodeElement = document.getElementById("qrCode");
+                                    qrCodeElement.innerHTML = qrCodeImg;
+                        
+                                    const copyButton = document.getElementById("copyButton");
+                                    copyButton.addEventListener("click", function () {
+                                        const tempInput = document.createElement("input");
+                                        tempInput.value = link;
+                                        document.body.appendChild(tempInput);
+                                        tempInput.select();
+                                        document.execCommand("copy");
+                                        document.body.removeChild(tempInput);
+                        
+                                        const customToast = document.createElement("div");
+                                        customToast.className = "custom-toast";
+                                        customToast.innerHTML = "Link copied to clipboard!";
+                                        document.body.appendChild(customToast);
+                        
+                                        setTimeout(function () {
+                                            customToast.classList.add("show");
+                                        }, 10);
+                        
+                                        setTimeout(function () {
+                                            customToast.classList.remove("show");
+                                            setTimeout(function () {
+                                                document.body.removeChild(customToast);
+                                            }, 300);
+                                        }, 3000);
+                                    });
+                                });
+                            </script>
+                        </footer>
+                    </section>
+    </body>
+</html>
